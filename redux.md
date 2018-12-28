@@ -192,6 +192,13 @@ const store = createStore(rootReducer, { one: 10 })
 console.log(store.getState())
 ```
 
+### Reducer 异步操作
++ Action 发出以后，Reducer 立即算出 State，这叫做同步
++ Action 发出以后，过一段时间再执行 Reducer，这叫做异步
++ 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用中间件（middleware）applyMiddleware 辅助函数
++ 中间件的雏形：对 store.dispatch 进行改造
++ 注意：中间件的书写顺序
+
 # 纯函数
 + 只要是同样的输入，必定得到同样的输出
 + 纯函数是函数式编程的概念，必须遵守以下约束
